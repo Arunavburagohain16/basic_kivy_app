@@ -1,0 +1,43 @@
+FloatLayout:
+    Background:
+        id: background
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "sky.jpg"
+            Rectangle:
+                size: 170, 130
+                pos: 500, self.pos[1] + self.height - 138
+                texture: self.sun_texture
+            Rectangle:
+                size: self.width, 138
+                pos: self.pos[0], self.pos[1] + self.height - 168
+                texture: self.cloud_texture
+            Rectangle:
+                size: self.width, 100
+                pos: self.pos[0], self.pos[1]
+                texture: self.floor_texture
+                
+        Image:
+            source: 'dog2.gif'
+            anim_delay: 0.09
+            size: 200, 200
+            pos: 30, 30
+
+        Image:
+            source: 'boy1.gif'
+            anim_delay: 0.09
+            size: 200, 200
+            pos: 200, 70
+
+        Button:
+            text: 'Bhow bhow'
+            color: .8,.9,0,1
+            background_color: 1, 1, 1, 0.3
+            size: 100, 100
+            halign: 'center'
+            center: root.center
+            pos: 350, 300
+            font_size: 12
+            on_press: app.poop()
